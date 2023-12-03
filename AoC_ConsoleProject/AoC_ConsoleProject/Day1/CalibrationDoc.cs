@@ -40,7 +40,7 @@
 
                         foreach (var item in tempList)
                         {
-                            int count = numbersInString.Where(item => line.Contains(item.Key)).ToList().Count + 2;
+                            int count = line.Where(s => line.Contains(item.Key)).ToList().Count;
                             int lastIndex = 0;
                             for (int i = 0; i < count; i++)
                             {
