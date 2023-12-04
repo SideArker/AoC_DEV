@@ -2,7 +2,8 @@
 
 
 using AoC_ConsoleProject.Day1;
+using AoC_ConsoleProject.Day2_Cube_Conundrum;
 
-CalibrationDoc calDoc = new CalibrationDoc();
+Cube cube = new Cube();
 
-calDoc.Main();
+cube.Main();

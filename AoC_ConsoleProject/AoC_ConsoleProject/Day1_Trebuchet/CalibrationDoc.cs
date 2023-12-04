@@ -45,55 +45,55 @@
                             for (int i = 0; i < count; i++)
                             {
                                 if (line.IndexOf(item.Key, lastIndex) > -1)
-                              {
-                                lineArray[line.IndexOf(item.Key, lastIndex)] = item.Value.ToString();
-                                lastIndex = line.IndexOf(item.Key, lastIndex) + item.Key.Length;
+                                {
+                                    lineArray[line.IndexOf(item.Key, lastIndex)] = item.Value.ToString();
+                                    lastIndex = line.IndexOf(item.Key, lastIndex) + item.Key.Length;
+
+                                }
 
                             }
-
                         }
-                    }
 
                         int prevIndex = 0;
-                    foreach(var item in line.Where(x => char.IsNumber(x)).ToList())
+                        foreach (var item in line.Where(x => char.IsNumber(x)).ToList())
                         {
                             lineArray[line.IndexOf(item, prevIndex)] = item.ToString();
                             prevIndex = line.IndexOf(item, prevIndex) + 1;
-                        }    
+                        }
 
-                    List<string> finalArray = new List<string>();
+                        List<string> finalArray = new List<string>();
 
-                    for (int i = 0; i < lineArray.Length; i++)
-                    {
-                        if (!string.IsNullOrWhiteSpace(lineArray[i])) finalArray.Add(lineArray[i]);
+                        for (int i = 0; i < lineArray.Length; i++)
+                        {
+                            if (!string.IsNullOrWhiteSpace(lineArray[i])) finalArray.Add(lineArray[i]);
+                        }
+
+                        string newLine = "";
+                        finalArray.ForEach(x => newLine = string.Concat(newLine, x));
+                        Console.WriteLine(newLine);
+                        int calibrationValue = 0;
+                        if (newLine.Length == 1) calibrationValue += Convert.ToInt32(string.Concat(newLine[0], newLine[0]));
+                        else calibrationValue += Convert.ToInt32(string.Concat(newLine[0], newLine[newLine.Length - 1]));
+
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write("Calibration Value: ");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(calibrationValue);
+                        sum += calibrationValue;
+
                     }
 
-                    string newLine = "";
-                    finalArray.ForEach(x => newLine = string.Concat(newLine, x));
-                    Console.WriteLine(newLine);
-                    int calibrationValue = 0;
-                    if (newLine.Length == 1) calibrationValue += Convert.ToInt32(string.Concat(newLine[0], newLine[0]));
-                    else calibrationValue += Convert.ToInt32(string.Concat(newLine[0], newLine[newLine.Length - 1]));
+
 
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write("Calibration Value: ");
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine(calibrationValue);
-                    sum += calibrationValue;
-
+                    Console.WriteLine($"Sum: {sum}");
                 }
-
-
-
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"Sum: {sum}");
-            }
                 Console.ForegroundColor = ConsoleColor.Yellow;
-        }
+            }
             catch (Exception ex)
             {
                 Console.Write($"Error while reading file: {ex}");
             }
-}
+        }
     }
 }
