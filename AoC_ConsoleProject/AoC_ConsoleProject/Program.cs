@@ -5,6 +5,6 @@
 using AoC_ConsoleProject.Day3_Gear_Ratios;
 using AoC_ConsoleProject.Day4_ScratchCards;
 
-Gears gear = new Gears();
+Cards gear = new Cards();
 
 gear.Main();
