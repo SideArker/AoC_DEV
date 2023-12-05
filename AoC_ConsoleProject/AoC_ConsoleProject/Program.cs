@@ -1,9 +1,8 @@
 ﻿// MAIN PROGRAM OF CONSOLE PROJECT
 
 
-using AoC_ConsoleProject.Day1;
-using AoC_ConsoleProject.Day2_Cube_Conundrum;
+using AoC_ConsoleProject.Day3_Gear_Ratios;
 
-Cube cube = new Cube();
+Gears gear = new Gears();
 
-cube.Main();
+gear.Main();

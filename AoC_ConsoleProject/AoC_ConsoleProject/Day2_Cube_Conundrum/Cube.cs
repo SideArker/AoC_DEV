@@ -2,7 +2,7 @@
 
 namespace AoC_ConsoleProject.Day2_Cube_Conundrum
 {
-    internal class Cube
+    internal class GearRatios
     {
         static string inputPath = "C:\\GitHub\\AoC_DEV\\AoC_ConsoleProject\\AoC_ConsoleProject\\Day2_Cube_Conundrum\\Assets\\PuzzleInput.txt";
         int redCubes = 12;
@@ -35,16 +35,16 @@ namespace AoC_ConsoleProject.Day2_Cube_Conundrum
 
             string[] gameSets = line.Split(";");
             Console.WriteLine($"Game sets: {gameSets.Length}");
-            foreach(string gameSet in gameSets )
+            foreach (string gameSet in gameSets)
             {
                 string[] gameInput = gameSet.Split(",");
 
-                for(int i = 0; i < gameInput.Length; i++)
+                for (int i = 0; i < gameInput.Length; i++)
                 {
                     string colorType = Regex.Replace(gameInput[i], @"[\d-]", string.Empty).Trim().ToLower();
                     int colorCount = Convert.ToInt32(Regex.Replace(gameInput[i], "[^.0-9]", string.Empty));
 
-                    switch(colorType)
+                    switch (colorType)
                     {
                         case "blue":
                             if (biggestBlue < colorCount) biggestBlue = colorCount;
@@ -64,7 +64,7 @@ namespace AoC_ConsoleProject.Day2_Cube_Conundrum
             int powerOfSet = biggestRed * biggestGreen * biggestBlue;
 
             sumOfPowers += powerOfSet;
-            if(correctGame) possibleGameIds += Convert.ToInt32(gameId);
+            if (correctGame) possibleGameIds += Convert.ToInt32(gameId);
 
         }
 
@@ -86,7 +86,7 @@ namespace AoC_ConsoleProject.Day2_Cube_Conundrum
                     Console.WriteLine($"Sum of powers: {sumOfPowers}");
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
