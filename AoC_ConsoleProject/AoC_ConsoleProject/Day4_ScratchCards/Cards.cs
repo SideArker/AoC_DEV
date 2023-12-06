@@ -1,8 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-using System.Security.AccessControl;
-using System.Text.RegularExpressions;
-
-namespace AoC_ConsoleProject.Day4_ScratchCards
+﻿namespace AoC_ConsoleProject.Day4_ScratchCards
 {
     internal class Cards
     {
@@ -65,7 +61,7 @@ namespace AoC_ConsoleProject.Day4_ScratchCards
             }
             else
             {
-                for(int i = 1; i <= matching; i++)
+                for (int i = 1; i <= matching; i++)
                 {
                     CountCards(lineIndex + i);
                 }
@@ -77,7 +73,7 @@ namespace AoC_ConsoleProject.Day4_ScratchCards
         {
             lines = GetLines();
 
-            for(int i = 0; i < lines.Count; i++)
+            for (int i = 0; i < lines.Count; i++)
             {
                 CountCards(i);
             }

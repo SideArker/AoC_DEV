@@ -51,7 +51,7 @@ namespace AoC_ConsoleProject.Day3_Gear_Ratios
             {
                 if (currentIndex - 1 < 0) break;
                 if (!char.IsNumber(line[currentIndex - 1])) break;
-                    currentIndex--;
+                currentIndex--;
             }
             return currentIndex;
         }
@@ -70,7 +70,7 @@ namespace AoC_ConsoleProject.Day3_Gear_Ratios
                 int lastPartIndexInLine = 0;
                 string currentLine = LinesInInput[i];
 
-                for(int k = 0; k < currentLine.Length; k++)
+                for (int k = 0; k < currentLine.Length; k++)
                 {
                     if (currentLine[k] == '*')
                     {
@@ -105,7 +105,7 @@ namespace AoC_ConsoleProject.Day3_Gear_Ratios
                         if (i - 1 < 0) continue;
                         string previousLine = LinesInInput[i - 1];
                         if (k - 1 < 0) k++;
-                        if (k + 1 > previousLine.Length) continue; 
+                        if (k + 1 > previousLine.Length) continue;
 
                         if (!char.IsNumber(previousLine[k]) && previousLine[k] != '.')
                         {
@@ -121,25 +121,25 @@ namespace AoC_ConsoleProject.Day3_Gear_Ratios
                     int iterator = 1;
 
                     if (firstIndex - iterator < 0) iterator = 0;
-                        if (!char.IsNumber(currentLine[firstIndex - iterator]) && currentLine[firstIndex - iterator] != '.')
-                        {
+                    if (!char.IsNumber(currentLine[firstIndex - iterator]) && currentLine[firstIndex - iterator] != '.')
+                    {
 
-                            Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Yellow;
 
-                            Console.WriteLine($"Part {part} is by a symbol");
-                            hasBeenFound = true;
-                        }
+                        Console.WriteLine($"Part {part} is by a symbol");
+                        hasBeenFound = true;
+                    }
 
                     if (lastIndex + iterator >= currentLine.Length) iterator = 0;
-                        if (!char.IsNumber(currentLine[lastIndex + iterator]) && currentLine[lastIndex + iterator] != '.')
-                        {
+                    if (!char.IsNumber(currentLine[lastIndex + iterator]) && currentLine[lastIndex + iterator] != '.')
+                    {
 
 
-                            Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Yellow;
 
-                            Console.WriteLine($"Part {part} is by a symbol");
-                            hasBeenFound = true;
-                        }
+                        Console.WriteLine($"Part {part} is by a symbol");
+                        hasBeenFound = true;
+                    }
 
 
                     // Next line
@@ -193,7 +193,7 @@ namespace AoC_ConsoleProject.Day3_Gear_Ratios
                     string currentLine = LinesInInput[gearIndexLine[i]];
                     string nextLine = "";
                     if (gearIndexLine[i] + 1 < LinesInInput.Count) nextLine = LinesInInput[gearIndexLine[i] + 1];
-                    
+
                     if (k - 1 < 0) k++;
                     if (k + 1 > previousLine.Length) continue;
 
@@ -223,7 +223,7 @@ namespace AoC_ConsoleProject.Day3_Gear_Ratios
 
                     //Next line
 
-                    if(!string.IsNullOrEmpty(nextLine))
+                    if (!string.IsNullOrEmpty(nextLine))
                     {
                         if (char.IsNumber(nextLine[k]))
                         {
@@ -240,7 +240,7 @@ namespace AoC_ConsoleProject.Day3_Gear_Ratios
                                 tempNum += nextLine[firstIndexOfNum + v];
                             }
 
-                            if(!string.IsNullOrEmpty(tempNum))
+                            if (!string.IsNullOrEmpty(tempNum))
                             {
                                 Console.WriteLine(tempNum);
                                 foundNums.Add(tempNum);
@@ -248,7 +248,7 @@ namespace AoC_ConsoleProject.Day3_Gear_Ratios
 
                         }
                     }
-               
+
 
                     // Current line
                     if (char.IsNumber(currentLine[k]))

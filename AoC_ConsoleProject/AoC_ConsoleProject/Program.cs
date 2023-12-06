@@ -2,9 +2,8 @@
 
 
 
-using AoC_ConsoleProject.Day3_Gear_Ratios;
-using AoC_ConsoleProject.Day4_ScratchCards;
+using AoC_ConsoleProject.Day6_WaitForIt;
 
-Cards gear = new Cards();
+Boat gear = new Boat();
 
 gear.Main();
